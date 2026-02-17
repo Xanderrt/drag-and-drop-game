@@ -34,7 +34,7 @@ class Instruccion {
 }
 
 const inst1 = new Instruccion(
-  "/img/logo-camp.png",
+  "img/logo-camp.png",
   "Ruta Segura",
   "Le damos la bienvenida a esta actividad, en la cual aprenderá a identificar y ubicar diferentes tipos de señales y demarcaciones de seguridad. ¡Vamos!",
   "cerrarInstrucciones()",
@@ -43,7 +43,7 @@ const inst1 = new Instruccion(
   '<i class="fa-regular fa-circle-right"></i>'
 );
 const inst2 = new Instruccion(
-  "/img/inst-2.gif",
+  "img/inst-2.gif",
   "Encuentre y ubique",
   "Una vez inicie la actividad, en la parte izquierda de la pantalla encontrará un panel con diferentes tipos de señales, debe seleccionar cada una de ellas y ubicarlas en el lugar que les corresponde.",
   "retrocederInstruccion(inst1)",
@@ -52,7 +52,7 @@ const inst2 = new Instruccion(
   '<i class="fa-regular fa-circle-right"></i>'
 );
 const inst3 = new Instruccion(
-  "/img/inst-3.gif",
+  "img/inst-3.gif",
   "Sin temor al error",
   "Si la señal que seleccionó no logró ubicarla en el lugar correcto, recibirá una pista que le ayudará a encontrar el sitio adecuado.",
   "retrocederInstruccion(inst2)",
@@ -61,7 +61,7 @@ const inst3 = new Instruccion(
   '<i class="fa-regular fa-circle-right"></i>'
 );
 const inst4 = new Instruccion(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "¿Todo listo?",
   "La actividad llegará a su final, una vez haya completado los 4 escenarios. Le deseamos buena suerte, mucha diversión y aprendizaje.",
   "retrocederInstruccion(inst3)",
@@ -82,7 +82,7 @@ class Modal {
 }
 
 const error1 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Intente de nuevo",
   "La señal de “Salida de emergencia” debe ir ubicada en un lugar alto y de fácil visibilidad.",
   "Volver",
@@ -90,7 +90,7 @@ const error1 = new Modal(
 );
 
 const error2 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "¿Esta seguro?",
   "Esta señal suele estar ubicada en el suelo, cerca de superficies húmedas.",
   "Volver",
@@ -98,7 +98,7 @@ const error2 = new Modal(
 );
 
 const error3 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Buen intento",
   "Esta señal debe estar ubicada en zonas sociales cerradas.",
   "Volver",
@@ -106,7 +106,7 @@ const error3 = new Modal(
 );
 
 const error4 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Recuerde:",
   "La ruta de evacuación debe ser identificable fácilmente.",
   "Volver",
@@ -114,7 +114,7 @@ const error4 = new Modal(
 );
 
 const error5 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Esta no va aquí",
   "Esta señal, ayuda a prevenir caídas y facilita la evacuación en caso de emergencia.",
   "Volver",
@@ -122,7 +122,7 @@ const error5 = new Modal(
 );
 
 const error6 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Esta no va aquí",
   "Esta señal debe estar ubicada en lugares donde el riesgo de caída de objetos sea muy elevado.",
   "Volver",
@@ -130,7 +130,7 @@ const error6 = new Modal(
 );
 
 const error7 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "¡Aquí no es!",
   "Esta señal debe estar ubicada en un lugar visible y sin obstrucciones.",
   "Volver",
@@ -138,7 +138,7 @@ const error7 = new Modal(
 );
 
 const error8 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal permite demarcar una zona de riesgo para evitar accidentes.",
   "Volver",
@@ -146,7 +146,7 @@ const error8 = new Modal(
 );
 
 const error9 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Sigue intentandolo",
   "Esta señal debe ubicarse en el área donde se realizan trabajos de excavación, para advertir sobre el peligro de caídas o accidentes.",
   "Volver",
@@ -154,7 +154,7 @@ const error9 = new Modal(
 );
 
 const error10 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "¿Seguro que va ahí?",
   "Esta señal debe ir ubicada en zonas a las que no debemos acceder, demarca el límite para evitar accidentes graves.",
   "Volver",
@@ -162,7 +162,7 @@ const error10 = new Modal(
 );
 
 const error11 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Lugar erroneo",
   "Esta señal se utiliza para demarcar la zona segura por la cual deben transitar los peatones en la vía pública.",
   "Volver",
@@ -170,7 +170,7 @@ const error11 = new Modal(
 );
 
 const error12 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal debe ir ubicada en un lugar despejado y amplio, donde varias personas puedan reunirse en caso de emergencia.",
   "Volver",
@@ -178,7 +178,7 @@ const error12 = new Modal(
 );
 
 const error13 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Esta no va aquí",
   "Esta señal complementa las demarcaciones de sendero peatonal y debe estar ubicada cerca a estas zonas.",
   "Volver",
@@ -186,7 +186,7 @@ const error13 = new Modal(
 );
 
 const error14 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Recuerde:",
   "Esta señal es utilizada en la calzada donde los conductores puedan verla con facilidad y aplicarla.",
   "Volver",
@@ -194,7 +194,7 @@ const error14 = new Modal(
 );
 
 const error15 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "La función de esta señal es indicar al conductor que debe reducir su velocidad ya sea por un cruce de vías o paso peatonal.",
   "Volver",
@@ -202,7 +202,7 @@ const error15 = new Modal(
 );
 
 const error16 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal se utiliza para delimitar zonas de parqueo para personas con condiciones especiales y el piso es de diferente color.",
   "Volver",
@@ -210,7 +210,7 @@ const error16 = new Modal(
 );
 
 const error17 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal se utiliza para demarcar la zona de aislamiento en la que se encuentran vehículos averiados o se realizan reparaciones.",
   "Volver",
@@ -218,7 +218,7 @@ const error17 = new Modal(
 );
 
 const error18 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal debe estar ubicada en el asfalto antes de senderos peatonales para evitar accidentes por exceso de velocidad.",
   "Volver",
@@ -226,7 +226,7 @@ const error18 = new Modal(
 );
 
 const error19 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Encuentre una zona en la cuál no debería parquear por obstrucción del paso",
   "Volver",
@@ -234,7 +234,7 @@ const error19 = new Modal(
 );
 
 const error20 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta demarcación es una medida de seguridad que se utiliza para establecer límites en un espacio, previniendo el acercamiento o ingreso de los peatones y prevenir accidentes.",
   "Volver",
@@ -242,7 +242,7 @@ const error20 = new Modal(
 );
 
 const error21 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal de seguridad alerta sobre la presencia de objetos o sustancias que pueden incendiarse fácilmente.",
   "Volver",
@@ -250,7 +250,7 @@ const error21 = new Modal(
 );
 
 const error22 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Busque un botiquín o un kit de emergencias.",
   "Volver",
@@ -258,7 +258,7 @@ const error22 = new Modal(
 );
 
 const error23 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   " Ubique un equipo en movimiento que pueda generar accidentes por atrapamiento y ubique la señal nuevamente.",
   "Volver",
@@ -266,7 +266,7 @@ const error23 = new Modal(
 );
 
 const error24 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Busque el extintor más cercano.",
   "Volver",
@@ -274,7 +274,7 @@ const error24 = new Modal(
 );
 
 const error25 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Identifique las zonas dentro de la imagen en las que el acceso debe ser restringido para personal no autorizado y ubique la señal para evitar accidentes.",
   "Volver",
@@ -282,7 +282,7 @@ const error25 = new Modal(
 );
 
 const error26 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Esta señal debe ubicarse en un lugar visible para evitar el riesgo de padecer enfermedades respiratorias por el consumo en el trabajo y para evitar riesgo de incendios",
   "Volver",
@@ -290,7 +290,7 @@ const error26 = new Modal(
 );
 
 const error27 = new Modal(
-  "/img/modal-wrong.png",
+  "img/modal-wrong.png",
   "Cerca, pero no",
   "Busque un lugar que requiera una separación entre una vía de transito y elementos o ambientes riesgosos de trabajo.",
   "Volver",
@@ -298,7 +298,7 @@ const error27 = new Modal(
 );
 
 const acierto = new Modal(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "¡Excelente!",
   "La señal está correctamente ubicada ¡Muy Bien!.",
   "Continuar",
@@ -306,7 +306,7 @@ const acierto = new Modal(
 );
 
 const nuevoNivel1 = new Modal(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "Escenario Completado",
   "¡Gran trabajo! vamos al siguiente escenario.",
   "Siguiente",
@@ -314,7 +314,7 @@ const nuevoNivel1 = new Modal(
 );
 
 const nuevoNivel2 = new Modal(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "Escenario Completado",
   "¡Excelente! el siguiente escenario nos espera.",
   "Siguiente",
@@ -322,7 +322,7 @@ const nuevoNivel2 = new Modal(
 );
 
 const nuevoNivel3 = new Modal(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "Escenario Completado",
   "¡Bien hecho! vamos una última vez.",
   "Siguiente",
@@ -330,7 +330,7 @@ const nuevoNivel3 = new Modal(
 );
 
 const finalJuego = new Modal(
-  "/img/modal-right.png",
+  "img/modal-right.png",
   "Fin del Juego",
   "¡Felicidades! ha llegado al final del juego con éxito, ahora es un experto identificando y ubicando las señales en las diferentes zonas de trabajo. ¡Recuerde hacer uso adecuado de la señalización y demarcación, esté buen hábito puede salvar su vida y la de los demás!.",
   "Finalizar",
@@ -345,9 +345,9 @@ class Juego {
   }
 }
 
-const juego2 = new Juego("/game2.html");
-const juego3 = new Juego("/game3.html");
-const juego4 = new Juego("/game4.html");
+const juego2 = new Juego("../game2.html");
+const juego3 = new Juego("../game3.html");
+const juego4 = new Juego("../game4.html");
 
 //funciones
 
@@ -460,6 +460,6 @@ function volverInicio() {
   }, 300);
 
   setTimeout(() => {
-    window.location.assign("/index.html");
+    window.location.assign("../index.html");
   }, 600);
 }

@@ -28,7 +28,7 @@ body {
   overflow: hidden;
   color: var(--black);
   background-color: var(--gray);
-  background-image: url(/img/bg.png);
+  background-image: url(../img/bg.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
