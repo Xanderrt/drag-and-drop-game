@@ -1,0 +1,659 @@
+/*------------------- BASE ---------------------*/
+.pantalla {
+  width: 100%;
+  height: 100%;
+}
+
+.vigilado {
+  position: absolute;
+  width: 1%;
+  height: auto;
+  z-index: 2;
+}
+
+.izquierda {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.izquierda img {
+  width: 1.2rem;
+}
+
+.derecha {
+  top: 1rem;
+  right: 1rem;
+}
+
+.derecha img {
+  width: 1.2rem;
+}
+
+.logo-bolivar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.logo-bolivar img {
+  height: 5rem;
+  width: auto;
+  align-self: flex-end;
+}
+
+/*------------------- INICIO ---------------------*/
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*   Espacio del logo en el inicio   */
+
+.logo-grande {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  transition: translateY, 0.3s;
+
+  animation: inicio-logo ease 1.5s;
+}
+
+.logo-inicio {
+  position: absolute;
+}
+
+.bg-logo {
+  top: 0;
+  right: 0;
+
+  width: 95%;
+
+  z-index: 0;
+}
+
+.logo-camp {
+  width: 42rem;
+  height: auto;
+
+  z-index: 2;
+
+  transition: translateY, scale, 0.3s;
+
+  animation: logo-up 1s 2s ease forwards;
+}
+
+.nombre-juego {
+  width: 30%;
+  height: auto;
+
+  z-index: 1;
+
+  opacity: 0;
+  transition: translateY, 0.3s;
+
+  animation: nombre-down 1s 2s ease forwards;
+}
+
+/*   Caja de los botones del inicio   */
+
+.btn-box {
+  width: 100%;
+  height: 20%;
+
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  gap: 2rem;
+
+  animation: inicio-btn ease 1.5s;
+}
+
+/* .instrucciones-btn {
+  color: var(--primario);
+  background-color: var(--gray);
+  border: solid 0.2rem var(--primario);
+}
+
+.instrucciones-btn:hover {
+  color: var(--white);
+  background-color: var(--primario);
+} */
+
+/*   Instrucciones   */
+.instrucciones-box {
+  width: 80rem;
+  height: 30rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  gap: 2rem;
+
+  position: absolute;
+  z-index: 99;
+
+  background-color: var(--gray);
+  border-radius: 3rem;
+  box-shadow: 0.5rem 1rem var(--transparent);
+
+  transition: translateX, opacity, 0.5s ease-in-out;
+  transform: translateX(-150rem);
+  opacity: 0;
+}
+
+.img-inst {
+  width: 40%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--gray);
+
+  overflow: hidden;
+}
+
+.img-inst img {
+  width: 100%;
+  height: hidden;
+  border-radius: 2rem;
+}
+
+.cont-inst {
+  width: 60%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.titulo-inst {
+  width: 100%;
+  height: 20%;
+  border-bottom: 0.2rem solid var(--secundario);
+  color: var(--secundario);
+}
+
+.texto-inst {
+  width: fit-content;
+  height: fit-content;
+}
+
+.btn-inst {
+  width: 5rem;
+  height: 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5rem;
+  border: none;
+
+  color: var(--terciario);
+  background-color: var(--primario);
+  box-shadow: 0.2rem 0.3rem var(--transparent);
+
+  transition: scale, 0.3s ease;
+  transform: scale(1);
+
+  cursor: pointer;
+}
+
+.btn-inst:hover {
+  transform: scale(1.1);
+}
+
+.btn-inst:active {
+  transform: scale(0.9);
+  background-color: var(--secundario);
+  box-shadow: 0 0 var(--transparent);
+}
+
+.izq {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 4rem;
+}
+
+.der {
+  position: absolute;
+  bottom: -1.5rem;
+  right: 4rem;
+}
+
+/*------------------- JUEGO ---------------------*/
+.game-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/*  Items arrastrables  */
+.menu-items {
+  width: 16.8rem;
+  height: 60rem;
+  background-color: var(--terciario);
+  padding: 1rem;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 3rem 0 0;
+  box-shadow: 0.5rem 0.7rem var(--transparent);
+
+  transition: translateX, 1s;
+  transform: translateX(0);
+
+  animation: inicio-menu 0.5s ease;
+}
+
+.draggable-elements {
+  width: 97%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  overflow: hidden;
+
+  margin-bottom: 1rem;
+}
+
+.texto-menu {
+  padding: 1.5rem;
+  line-height: 1.6rem;
+  font-family: "Bolivar-Bold";
+  color: var(--secundario);
+  border-bottom: solid 0.2rem var(--secundario);
+}
+
+.nombre-item {
+  line-height: 1.6rem;
+  font-family: "Bolivar-Regular";
+  font-size: 1.3rem;
+  color: var(--secundario);
+  text-align: center;
+}
+
+.draggable {
+  height: 6.5rem;
+  width: 6.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: solid 0.3rem var(--primario);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  margin-top: 1rem;
+
+  cursor: move;
+  transition: opacity 0.2s;
+}
+
+.draggable:hover {
+  opacity: 0.5;
+}
+
+.draggable.dragged {
+  display: none;
+}
+
+.draggable.dragged:hover {
+  opacity: 0.1;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*  Tablero  */
+
+.bg-img {
+  width: 90rem;
+  height: 45rem;
+  display: grid;
+  grid-template-columns: repeat(80, 1fr);
+  grid-template-rows: repeat(40, 1fr);
+  border-radius: 2rem;
+  box-shadow: 0.5rem 0.7rem var(--transparent);
+
+  transition: transformX, 0.5s;
+
+  animation: inicio-bg 0.8s ease-in;
+}
+
+.t1 {
+  background-color: var(--gray);
+  background-image: url(/img/tablero1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.t2 {
+  background-color: var(--gray);
+  background-image: url(/img/tablero2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* .t3 {
+  background-color: var(--gray);
+  background-image: url(/img/tablero3.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.t4 {
+  background-color: var(--gray);
+  background-image: url(/img/tablero4.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+
+.droppable {
+  height: 4.5rem;
+  width: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.3rem dotted var(--primario);
+  transition: transform 0.2s, background-color 0.4s;
+}
+
+.droppable.droppable-hover {
+  border-color: var(--terciario);
+  border-width: 0.5rem;
+  transform: scale(1.1);
+}
+
+.droppable.dropped {
+  border-style: none;
+  color: var(--white);
+}
+
+.droppable.dropped img {
+  pointer-events: none;
+}
+
+.img-tablero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-tablero img {
+  width: 100%;
+  height: auto;
+}
+
+/*------------------  MODALES ---------------------*/
+
+.modal {
+  width: 68rem;
+  height: 19.3rem;
+  position: absolute;
+  z-index: 9;
+
+  background-color: var(--gray);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  border-radius: 50rem 10rem 10rem 50rem;
+
+  filter: drop-shadow(-0.4rem 0.6rem var(--transparent));
+
+  transition: scale, opacity, 0.3s;
+  transform: scale(0);
+}
+
+.modal-img-box {
+  position: absolute;
+  left: -0.8rem;
+  height: 130%;
+  width: auto;
+}
+
+.modal-img-box img {
+  height: 100%;
+  width: auto;
+}
+
+.modal-contenido-box {
+  display: flex;
+  margin-left: 10rem;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  padding: 1rem 2rem 1rem 10rem;
+}
+
+.titulo-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: solid 0.3rem var(--primario);
+  color: var(--terciario);
+  -webkit-text-stroke: 0.2rem var(--secundario);
+  -webkit-text-fill-color: var(--terciario);
+}
+
+.texto-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.btn-modal-box {
+  width: 95%;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.btn-modal-box input {
+  position: absolute;
+  bottom: -2rem;
+  right: -0.5rem;
+}
+
+/*------------------  ANIMACIONES ---------------------*/
+
+@keyframes inicio-logo {
+  from {
+    transform: translateY(-200rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-up {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(-5rem);
+  }
+}
+
+@keyframes nombre-down {
+  from {
+    transform: translateY(0rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(20rem);
+    opacity: 1;
+  }
+}
+
+@keyframes inicio-btn {
+  from {
+    transform: translateY(100rem);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-out {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200rem);
+  }
+}
+
+@keyframes btn-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateY(100rem);
+  }
+}
+
+@keyframes inicio-menu {
+  from {
+    transform: translateX(-100rem);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes inicio-bg {
+  from {
+    transform: translateY(100rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+}
+
+/*------------------  RESPONSIVE ---------------------*/
+
+/* Pantalla grande */
+@media (min-width: 1200px) and (min-height: 720px) {
+  /* INICIO */
+  .bg-logo {
+    width: 85%;
+  }
+
+  .logo-camp {
+    width: 50rem;
+  }
+
+  .nombre-juego {
+    width: 25%;
+  }
+
+  .logo-bolivar img {
+    height: 7rem;
+  }
+
+  /* JUEGO */
+
+  .bg-img {
+    width: 130rem;
+    height: 65rem;
+  }
+
+  .droppable {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+
+  .menu-items {
+    width: 18rem;
+    height: 65rem;
+  }
+
+  /* ANIMACIONES */
+
+  @keyframes logo-up {
+    from {
+      transform: translateY(0rem);
+    }
+    to {
+      transform: translateY(-7rem);
+    }
+  }
+
+  @keyframes nombre-down {
+    from {
+      transform: translateY(0rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(25rem);
+      opacity: 1;
+    }
+  }
+}
+
+@media (min-width: 1900px) {
+  /* INICIO */
+  .logo-camp {
+    width: 60rem;
+  }
+
+  /* JUEGO */
+  .bg-img {
+    width: 160rem;
+    height: 80rem;
+  }
+
+  .menu-items {
+    width: 18rem;
+    height: 85rem;
+  }
+}

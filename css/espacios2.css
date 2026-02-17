@@ -1,0 +1,51 @@
+/*  Espacios  */
+
+#e6 {
+  grid-area: 14/33/18/37;
+  visibility: visible;
+}
+
+#e7 {
+  grid-area: 16/52/20/56;
+  visibility: visible;
+}
+
+#e8 {
+  grid-area: 22/67/26/71;
+  visibility: visible;
+}
+
+#e9 {
+  grid-area: 23/72/27/76;
+  visibility: visible;
+}
+
+#e10 {
+  grid-area: 31/53/35/57;
+  visibility: visible;
+}
+
+#t2s1 {
+  grid-area: 14/33/18/37;
+  visibility: hidden;
+}
+
+#t2s2 {
+  grid-area: 14/50/22/58;
+  visibility: hidden;
+}
+
+#t2s3 {
+  grid-area: 20/67/29/81;
+  visibility: hidden;
+}
+
+#t2s4 {
+  grid-area: 20/70/29/ 77;
+  visibility: hidden;
+}
+
+#t2s5 {
+  grid-area: 28/37/38/78;
+  visibility: hidden;
+}

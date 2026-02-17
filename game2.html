@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  Título  -->
+    <title>Ruta Segura | ARL Bolivar</title>
+
+    <!--  Favicon  -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!--  Estilos  -->
+    <link rel="stylesheet" href="/css/root.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/espacios2.css" />
+
+    <!--  Font Awesome  -->
+    <script
+      src="https://kit.fontawesome.com/62f708f431.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--  Logo y Vigilado  -->
+    <section class="vigilado izquierda">
+      <img src="/img/vigilado-1.svg" alt="vigilado1" />
+    </section>
+    <section class="vigilado derecha">
+      <img src="/img/vigilado-2.svg" alt="vigilado2" />
+    </section>
+    <section class="logo-bolivar">
+      <img src="/img/inf-der.png" alt="logo ARL bolivar" class="bolivar-img" />
+    </section>
+
+    <!-- Home -->
+    <section class="home pantalla">
+      <div class="logo-grande">
+        <img
+          src="/img/forma-bg.png"
+          alt="fondo logo"
+          class="logo-inicio bg-logo"
+        />
+        <img
+          src="/img/logo-camp 1.png"
+          alt="logo juego inicio"
+          class="logo-inicio logo-camp"
+        />
+        <img
+          src="/img/rutaSegura.png"
+          alt="la ruta segura"
+          class="logo-inicio nombre-juego"
+        />
+      </div>
+
+      <div class="btn-box">
+        <input
+          type="button"
+          class="instrucciones-btn"
+          value="Instrucciones"
+          onclick="abrirInstrucciones()"
+        />
+        <input type="button" value="Comenzar" onclick="iniciarJuego()" />
+      </div>
+    </section>
+
+    <!--  Actividad  -->
+    <section class="game-1 pantalla">
+      <!--  Objetos Arrastrables  -->
+      <div class="menu-items">
+        <p class="texto-menu">
+          Arrastre cada señal al espacio en el que considera debe estar ubicada:
+        </p>
+        <div class="draggable-elements">
+          <img
+            src="/img/s6.png"
+            alt="señal1"
+            class="s6 draggable"
+            draggable="true"
+            id="s6"
+          />
+          <p class="nombre-item" id="nombreSeñal1">Caída de objetos</p>
+          <img
+            src="/img/s7.png"
+            alt="señal2"
+            class="s7 draggable"
+            draggable="true"
+            id="s7"
+          />
+          <p class="nombre-item" id="nombreSeñal2">Uso de EPP</p>
+          <img
+            src="/img/s8.png"
+            alt="señal3"
+            class="s8 draggable"
+            draggable="true"
+            id="s8"
+          />
+          <p class="nombre-item" id="nombreSeñal3">Poste delimitador</p>
+          <img
+            src="/img/s9.png"
+            alt="señal4"
+            class="s9 draggable"
+            draggable="true"
+            id="s9"
+          />
+          <p class="nombre-item" id="nombreSeñal4">Excavación profunda</p>
+          <img
+            src="/img/s10.png"
+            alt="señal5"
+            class="s10 draggable"
+            draggable="true"
+            id="s10"
+          />
+          <p class="nombre-item" id="nombreSeñal5">Banderines delimitadores</p>
+        </div>
+      </div>
+
+      <!--  Tablero y Espacios  -->
+
+      <div class="droppable-elements bg-img t2">
+        <div id="t2s1" class="img-tablero">
+          <img src="/img/t2s1.png" />
+        </div>
+        <div id="t2s2" class="img-tablero">
+          <img src="/img/t2s2.png" />
+        </div>
+        <div id="t2s3" class="img-tablero">
+          <img src="/img/t2s3.png" />
+        </div>
+        <div id="t2s4" class="img-tablero">
+          <img src="/img/t2s4.png" />
+        </div>
+        <div id="t2s5" class="img-tablero">
+          <img src="/img/t2s5.png" />
+        </div>
+        <div class="droppable" data-draggable-id="s6" id="e6"></div>
+        <div class="droppable" data-draggable-id="s7" id="e7"></div>
+        <div class="droppable" data-draggable-id="s8" id="e8"></div>
+        <div class="droppable" data-draggable-id="s9" id="e9"></div>
+        <div class="droppable" data-draggable-id="s10" id="e10"></div>
+      </div>
+    </section>
+
+    <!--  Modales  -->
+    <section class="modal" id="modal-cont">
+      <div class="modal-img-box" id="img-modal">
+        <img src="/img/modal-right.png" alt="imagen del modal" />
+      </div>
+      <div class="modal-contenido-box">
+        <div class="info-box">
+          <div class="titulo-modal" id="titulo-modal">
+            <h2>Este es un Titulo</h2>
+          </div>
+          <div class="texto-modal" id="texto-modal">
+            <p>
+              Este es un parrafo de retroalimentación, puede ser bueno o puede
+              ser malo
+            </p>
+          </div>
+        </div>
+        <div class="btn-modal-box">
+          <input
+            type="button"
+            value="Cerrar"
+            id="btn-modal"
+            onclick="cerrarModal()"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!--  Scripts  -->
+    <script src="/js/juego2.js"></script>
+    <script src="/js/modales.js"></script>
+  </body>
+</html>
