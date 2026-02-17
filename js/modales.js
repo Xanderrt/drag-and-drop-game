@@ -460,6 +460,6 @@ function volverInicio() {
   }, 300);
 
   setTimeout(() => {
-    window.location.assign("../index.html");
+    window.location.assign("index.html");
   }, 600);
 }
