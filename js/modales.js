@@ -460,6 +460,6 @@ function volverInicio() {
   }, 300);
 
   setTimeout(() => {
-    window.location.assign("./index.html");
+    return window.location.href = "./index.html";
   }, 600);
 }
