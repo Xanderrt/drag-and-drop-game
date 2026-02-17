@@ -345,9 +345,9 @@ class Juego {
   }
 }
 
-const juego2 = new Juego("../game2.html");
-const juego3 = new Juego("../game3.html");
-const juego4 = new Juego("../game4.html");
+const juego2 = new Juego("game2.html");
+const juego3 = new Juego("game3.html");
+const juego4 = new Juego("game4.html");
 
 //funciones
 
