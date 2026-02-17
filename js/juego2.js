@@ -75,7 +75,7 @@ function drop(event) {
 
     event.target.insertAdjacentHTML(
       "afterbegin",
-      `<img src="/img/${draggableElementData}.png" alt="señal5" class="${draggableElementData} draggable invisible"/>`
+      `<img src="img/${draggableElementData}.png" alt="señal5" class="${draggableElementData} draggable invisible"/>`
     );
 
     switch (draggableElementData) {
