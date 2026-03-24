@@ -61,7 +61,7 @@
   align-items: center;
   flex-direction: column;
 
-  transition: translateY, 0.3s;
+  transition: transform 0.3s;
 
   animation: inicio-logo ease 1.5s;
 }
@@ -85,7 +85,7 @@
 
   z-index: 2;
 
-  transition: translateY, scale, 0.3s;
+  transition: transform 0.3s;
 
   animation: logo-up 1s 2s ease forwards;
 }
@@ -97,7 +97,7 @@
   z-index: 1;
 
   opacity: 0;
-  transition: translateY, 0.3s;
+  transition: transform 0.3s;
 
   animation: nombre-down 1s 2s ease forwards;
 }
@@ -147,9 +147,95 @@
   border-radius: 3rem;
   box-shadow: 0.5rem 1rem var(--transparent);
 
-  transition: translateX, opacity, 0.5s ease-in-out;
-  transform: translateX(-150rem);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scale(0.85);
   opacity: 0;
+  pointer-events: none;
+}
+
+/* Estado visible del panel */
+.instrucciones-box.inst-visible {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Estado oculto al cerrar */
+.instrucciones-box.inst-oculto {
+  transform: scale(0.85);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Contenedor del contenido animable */
+.inst-contenido {
+  display: contents;
+}
+
+/* Animaciones de slide del contenido interno */
+@keyframes inst-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes inst-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-4rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes inst-exit-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-4rem);
+  }
+}
+
+@keyframes inst-exit-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(4rem);
+  }
+}
+
+.inst-slide-out-left .img-inst,
+.inst-slide-out-left .cont-inst {
+  animation: inst-exit-left 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.inst-slide-out-right .img-inst,
+.inst-slide-out-right .cont-inst {
+  animation: inst-exit-right 0.25s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+.inst-slide-in-right .img-inst,
+.inst-slide-in-right .cont-inst {
+  animation: inst-enter-right 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+.inst-slide-in-left .img-inst,
+.inst-slide-in-left .cont-inst {
+  animation: inst-enter-left 0.35s cubic-bezier(0, 0, 0.2, 1) forwards;
 }
 
 .img-inst {
@@ -209,7 +295,7 @@
   background-color: var(--primario);
   box-shadow: 0.2rem 0.3rem var(--transparent);
 
-  transition: scale, 0.3s ease;
+  transition: scale 0.3s ease;
   transform: scale(1);
 
   cursor: pointer;
@@ -242,13 +328,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.tablero {
+  display: flex;
   flex-direction: row;
+  align-items: stretch;
+  gap: 2rem;
+
+  opacity: 0;
+  animation: juego-entrada 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
 }
 
 /*  Items arrastrables  */
 .menu-items {
   width: 16.8rem;
-  height: 60rem;
+  align-self: stretch;
   background-color: var(--terciario);
   padding: 1rem;
 
@@ -257,17 +352,8 @@
   align-items: center;
   flex-direction: column;
 
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  border-radius: 0 3rem 0 0;
+  border-radius: 2rem;
   box-shadow: 0.5rem 0.7rem var(--transparent);
-
-  transition: translateX, 1s;
-  transform: translateX(0);
-
-  animation: inicio-menu 0.5s ease;
 }
 
 .draggable-elements {
@@ -335,17 +421,13 @@
 /*  Tablero  */
 
 .bg-img {
-  width: 90rem;
-  height: 45rem;
+  aspect-ratio: 2 / 1;
+  width: min(90rem, 72vw);
   display: grid;
   grid-template-columns: repeat(80, 1fr);
   grid-template-rows: repeat(40, 1fr);
   border-radius: 2rem;
   box-shadow: 0.5rem 0.7rem var(--transparent);
-
-  transition: transformX, 0.5s;
-
-  animation: inicio-bg 0.8s ease-in;
 }
 
 .t1 {
@@ -435,7 +517,7 @@
 
   filter: drop-shadow(-0.4rem 0.6rem var(--transparent));
 
-  transition: scale, opacity, 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
   transform: scale(0);
 }
 
@@ -579,6 +661,17 @@
   }
 }
 
+@keyframes juego-entrada {
+  from {
+    opacity: 0;
+    scale: 0.92;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
 /*------------------  RESPONSIVE ---------------------*/
 
 /* Pantalla grande */
@@ -603,8 +696,7 @@
   /* JUEGO */
 
   .bg-img {
-    width: 130rem;
-    height: 65rem;
+    width: min(130rem, 72vw);
   }
 
   .droppable {
@@ -614,9 +706,7 @@
 
   .menu-items {
     width: 18rem;
-    height: 65rem;
   }
-
   /* ANIMACIONES */
 
   @keyframes logo-up {
@@ -648,12 +738,10 @@
 
   /* JUEGO */
   .bg-img {
-    width: 160rem;
-    height: 80rem;
+    width: min(160rem, 72vw);
   }
 
   .menu-items {
-    width: 18rem;
-    height: 85rem;
+    width: 20rem;
   }
 }

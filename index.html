@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/root.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/espacios1.css" />
+    <link rel="stylesheet" href="css/espacios2.css" />
 
     <!--  Font Awesome  -->
     <script
@@ -23,16 +24,6 @@
   </head>
 
   <body>
-    <!--  Logo y Vigilado  -->
-    <section class="vigilado izquierda">
-      <img src="img/vigilado-1.svg" alt="vigilado1" />
-    </section>
-    <section class="vigilado derecha">
-      <img src="img/vigilado-2.svg" alt="vigilado2" />
-    </section>
-    <section class="logo-bolivar">
-      <img src="img/inf-der.png" alt="logo ARL bolivar" class="bolivar-img" />
-    </section>
 
     <!--  Home  -->
     <section class="home pantalla">
@@ -99,80 +90,77 @@
       </div>
     </section>
 
-    <!--  Actividad  -->
-    <section class="game-1 pantalla">
-      <!--  Objetos Arrastrables  -->
-      <div class="menu-items">
-        <p class="texto-menu">
-          Arrastre cada señal al espacio en el que considera debe estar ubicada:
-        </p>
-        <div class="draggable-elements">
-          <img
-            src="img/s1.png"
-            alt="señal1"
-            class="s1 draggable"
-            draggable="true"
-            id="s1"
-          />
-          <p class="nombre-item" id="nombreSeñal1">Salida de emergencia</p>
-          <img
-            src="img/s2.png"
-            alt="señal2"
-            class="s2 draggable"
-            draggable="true"
-            id="s2"
-          />
-          <p class="nombre-item" id="nombreSeñal2">¡Cuidado! Piso mojado</p>
-          <img
-            src="img/s3.png"
-            alt="señal3"
-            class="s3 draggable"
-            draggable="true"
-            id="s3"
-          />
-          <p class="nombre-item" id="nombreSeñal3">Respire con tranquilidad</p>
-          <img
-            src="img/s4.png"
-            alt="señal4"
-            class="s4 draggable"
-            draggable="true"
-            id="s4"
-          />
-          <p class="nombre-item" id="nombreSeñal4">Ruta de evacuación</p>
-          <img
-            src="img/s5.png"
-            alt="señal5"
-            class="s5 draggable"
-            draggable="true"
-            id="s5"
-          />
-          <p class="nombre-item" id="nombreSeñal5">Escaleras</p>
+    <!--  Actividad — Nivel 1  -->
+    <section class="game-1 pantalla" id="nivel1">
+      <div class="tablero">
+        <!--  Objetos Arrastrables  -->
+        <div class="menu-items">
+          <p class="texto-menu">
+            Arrastre cada señal al espacio en el que considera debe estar ubicada:
+          </p>
+          <div class="draggable-elements">
+            <img src="img/s1.png" alt="señal1" class="s1 draggable" draggable="true" id="s1" />
+            <p class="nombre-item" id="nombreSeñal1">Salida de emergencia</p>
+            <img src="img/s2.png" alt="señal2" class="s2 draggable" draggable="true" id="s2" />
+            <p class="nombre-item" id="nombreSeñal2">¡Cuidado! Piso mojado</p>
+            <img src="img/s3.png" alt="señal3" class="s3 draggable" draggable="true" id="s3" />
+            <p class="nombre-item" id="nombreSeñal3">Respire con tranquilidad</p>
+            <img src="img/s4.png" alt="señal4" class="s4 draggable" draggable="true" id="s4" />
+            <p class="nombre-item" id="nombreSeñal4">Ruta de evacuación</p>
+            <img src="img/s5.png" alt="señal5" class="s5 draggable" draggable="true" id="s5" />
+            <p class="nombre-item" id="nombreSeñal5">Escaleras</p>
+          </div>
+        </div>
+        <!--  Tablero y Espacios  -->
+        <div class="droppable-elements bg-img t1">
+          <div id="t1s1" class="img-tablero"><img src="img/t1s1.png" /></div>
+          <div id="t1s2" class="img-tablero"><img src="img/t1s2.png" /></div>
+          <div id="t1s3" class="img-tablero"><img src="img/t1s3.png" /></div>
+          <div id="t1s4" class="img-tablero"><img src="img/t1s4.png" /></div>
+          <div id="t1s5" class="img-tablero"><img src="img/t1s5.png" /></div>
+          <div class="droppable" data-draggable-id="s1" id="e1"></div>
+          <div class="droppable" data-draggable-id="s2" id="e2"></div>
+          <div class="droppable" data-draggable-id="s3" id="e3"></div>
+          <div class="droppable" data-draggable-id="s4" id="e4"></div>
+          <div class="droppable" data-draggable-id="s5" id="e5"></div>
         </div>
       </div>
+    </section>
 
-      <!--  Tablero y Espacios  -->
-
-      <div class="droppable-elements bg-img t1">
-        <div id="t1s1" class="img-tablero">
-          <img src="img/t1s1.png" />
+    <!--  Actividad — Nivel 2  -->
+    <section class="game-1 pantalla" id="nivel2">
+      <div class="tablero">
+        <!--  Objetos Arrastrables  -->
+        <div class="menu-items">
+          <p class="texto-menu">
+            Arrastre cada señal al espacio en el que considera debe estar ubicada:
+          </p>
+          <div class="draggable-elements">
+            <img src="img/s6.png" alt="señal6" class="s6 draggable" draggable="true" id="s6" />
+            <p class="nombre-item" id="nombreSeñal6">Caída de objetos</p>
+            <img src="img/s7.png" alt="señal7" class="s7 draggable" draggable="true" id="s7" />
+            <p class="nombre-item" id="nombreSeñal7">Uso de EPP</p>
+            <img src="img/s8.png" alt="señal8" class="s8 draggable" draggable="true" id="s8" />
+            <p class="nombre-item" id="nombreSeñal8">Poste delimitador</p>
+            <img src="img/s9.png" alt="señal9" class="s9 draggable" draggable="true" id="s9" />
+            <p class="nombre-item" id="nombreSeñal9">Excavación profunda</p>
+            <img src="img/s10.png" alt="señal10" class="s10 draggable" draggable="true" id="s10" />
+            <p class="nombre-item" id="nombreSeñal10">Banderines delimitadores</p>
+          </div>
         </div>
-        <div id="t1s2" class="img-tablero">
-          <img src="img/t1s2.png" />
+        <!--  Tablero y Espacios  -->
+        <div class="droppable-elements bg-img t2">
+          <div id="t2s1" class="img-tablero"><img src="img/t2s1.png" /></div>
+          <div id="t2s2" class="img-tablero"><img src="img/t2s2.png" /></div>
+          <div id="t2s3" class="img-tablero"><img src="img/t2s3.png" /></div>
+          <div id="t2s4" class="img-tablero"><img src="img/t2s4.png" /></div>
+          <div id="t2s5" class="img-tablero"><img src="img/t2s5.png" /></div>
+          <div class="droppable" data-draggable-id="s6" id="e6"></div>
+          <div class="droppable" data-draggable-id="s7" id="e7"></div>
+          <div class="droppable" data-draggable-id="s8" id="e8"></div>
+          <div class="droppable" data-draggable-id="s9" id="e9"></div>
+          <div class="droppable" data-draggable-id="s10" id="e10"></div>
         </div>
-        <div id="t1s3" class="img-tablero">
-          <img src="img/t1s3.png" />
-        </div>
-        <div id="t1s4" class="img-tablero">
-          <img src="img/t1s4.png" />
-        </div>
-        <div id="t1s5" class="img-tablero">
-          <img src="img/t1s5.png" />
-        </div>
-        <div class="droppable" data-draggable-id="s1" id="e1"></div>
-        <div class="droppable" data-draggable-id="s2" id="e2"></div>
-        <div class="droppable" data-draggable-id="s3" id="e3"></div>
-        <div class="droppable" data-draggable-id="s4" id="e4"></div>
-        <div class="droppable" data-draggable-id="s5" id="e5"></div>
       </div>
     </section>
 
@@ -205,7 +193,7 @@
     </section>
 
     <!--  Scripts  -->
-    <script src="js/main.js"></script>
     <script src="js/modales.js"></script>
+    <script src="js/juego.js"></script>
   </body>
 </html>

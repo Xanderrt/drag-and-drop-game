@@ -305,120 +305,85 @@ const acierto = new Modal(
   "cerrarModal()"
 );
 
-const nuevoNivel1 = new Modal(
+const nuevoNivel = new Modal(
   "img/modal-right.png",
   "Escenario Completado",
   "¡Gran trabajo! vamos al siguiente escenario.",
   "Siguiente",
-  "cambiarNivel(juego2.pagina)"
-);
-
-const nuevoNivel2 = new Modal(
-  "img/modal-right.png",
-  "Escenario Completado",
-  "¡Excelente! el siguiente escenario nos espera.",
-  "Siguiente",
-  "cambiarNivel(juego3.pagina)"
-);
-
-const nuevoNivel3 = new Modal(
-  "img/modal-right.png",
-  "Escenario Completado",
-  "¡Bien hecho! vamos una última vez.",
-  "Siguiente",
-  "cambiarNivel(juego4.pagina)"
+  "cerrarModal(); avanzarNivel()"
 );
 
 const finalJuego = new Modal(
   "img/modal-right.png",
   "Fin del Juego",
-  "¡Felicidades! ha llegado al final del juego con éxito, ahora es un experto identificando y ubicando las señales en las diferentes zonas de trabajo. ¡Recuerde hacer uso adecuado de la señalización y demarcación, esté buen hábito puede salvar su vida y la de los demás!.",
-  "Finalizar",
-  "volverInicio()"
+  "¡Felicidades! ha llegado al final del juego con éxito, ahora es un experto identificando y ubicando las señales en las diferentes zonas de trabajo. ¡Recuerde hacer uso adecuado de la señalización y demarcación, este buen hábito puede salvar su vida y la de los demás!.",
+  "Volver al inicio",
+  "cerrarModal(); volverInicio()"
 );
-
-//Tableros
-
-class Juego {
-  constructor(pagina) {
-    this.pagina = pagina;
-  }
-}
-
-const juego2 = new Juego("game2.html");
-const juego3 = new Juego("game3.html");
-const juego4 = new Juego("game4.html");
 
 //funciones
 
-function abrirInstrucciones(inst) {
-  instBox.style.transform = "translateX(0)";
-  instBox.style.opacity = "1";
+// Duración en ms — debe coincidir con la animación exit en CSS (0.25s)
+const INST_EXIT_MS = 250;
 
-  instBtn.disabled = "true";
-  inicioBtn.disabled = "true";
-
-  imgInst.innerHTML = `<img src=${inst.img} id="img-inst" />`;
+function _renderInst(inst) {
+  imgInst.innerHTML = `<img src="${inst.img}" id="img-inst" />`;
   tituloInst.innerHTML = `<h2>${inst.titulo}</h2>`;
   textoInst.innerHTML = `<p>${inst.texto}</p>`;
-  izquierda.innerHTML =
-    `<button type="button" onclick = ${inst.izq}>` + inst.iconl + "</button>";
-  derecha.innerHTML =
-    `<button type="button" onclick = ${inst.der}>` + inst.iconr + "</button>";
+  izquierda.innerHTML = `<button type="button" onclick="${inst.izq}">${inst.iconl}</button>`;
+  derecha.innerHTML = `<button type="button" onclick="${inst.der}">${inst.iconr}</button>`;
+}
+
+function _limpiarClasesInst() {
+  instBox.classList.remove(
+    "inst-slide-out-left", "inst-slide-out-right",
+    "inst-slide-in-left",  "inst-slide-in-right"
+  );
+}
+
+function abrirInstrucciones(inst) {
+  instBtn.disabled = true;
+  inicioBtn.disabled = true;
+
+  _limpiarClasesInst();
+  _renderInst(inst);
+
+  // Forzar reflow para que la transición arranque desde el estado base
+  instBox.classList.remove("inst-oculto");
+  void instBox.offsetWidth;
+  instBox.classList.add("inst-visible");
+  instBox.classList.add("inst-slide-in-right");
 }
 
 function cerrarInstrucciones() {
-  instBox.style.transform = "translateX(150rem)";
-  instBox.style.opacity = "0";
-
   instBtn.removeAttribute("disabled");
   inicioBtn.removeAttribute("disabled");
 
-  setTimeout(() => {
-    instBox.style.transform = "translateX(-150rem)";
-  }, 500);
+  _limpiarClasesInst();
+  instBox.classList.remove("inst-visible");
+  instBox.classList.add("inst-oculto");
 }
 
 function avanzarInstruccion(inst) {
-  instBox.style.transform = "translateX(150rem)";
-  instBox.style.opacity = "0";
+  _limpiarClasesInst();
+  instBox.classList.add("inst-slide-out-left");
+
   setTimeout(() => {
-    instBox.style.transform = "translateX(-150rem)";
-  }, 500);
-  setTimeout(() => {
-    imgInst.innerHTML = `<img src=${inst.img} id="img-inst" />`;
-    tituloInst.innerHTML = `<h2>${inst.titulo}</h2>`;
-    textoInst.innerHTML = `<p>${inst.texto}</p>`;
-    izquierda.innerHTML =
-      `<button type="button" onclick = ${inst.izq}>` + inst.iconl + "</button>";
-    derecha.innerHTML =
-      `<button type="button" onclick = ${inst.der}>` + inst.iconr + "</button>";
-  }, 650);
-  setTimeout(() => {
-    instBox.style.transform = "translateX(0)";
-    instBox.style.opacity = "1";
-  }, 800);
+    _limpiarClasesInst();
+    _renderInst(inst);
+    instBox.classList.add("inst-slide-in-right");
+  }, INST_EXIT_MS);
 }
 
 function retrocederInstruccion(inst) {
-  instBox.style.transform = "translateX(-150rem)";
-  instBox.style.opacity = "0";
+  _limpiarClasesInst();
+  instBox.classList.add("inst-slide-out-right");
+
   setTimeout(() => {
-    instBox.style.transform = "translateX(150rem)";
-  }, 500);
-  setTimeout(() => {
-    imgInst.innerHTML = `<img src=${inst.img} id="img-inst" />`;
-    tituloInst.innerHTML = `<h2>${inst.titulo}</h2>`;
-    textoInst.innerHTML = `<p>${inst.texto}</p>`;
-    izquierda.innerHTML =
-      `<button type="button" onclick = ${inst.izq}>` + inst.iconl + "</button>";
-    derecha.innerHTML =
-      `<button type="button" onclick = ${inst.der}>` + inst.iconr + "</button>";
-  }, 650);
-  setTimeout(() => {
-    instBox.style.transform = "translateX(0)";
-    instBox.style.opacity = "1";
-  }, 800);
+    _limpiarClasesInst();
+    _renderInst(inst);
+    instBox.classList.add("inst-slide-in-left");
+  }, INST_EXIT_MS);
 }
 
 function abrirModal(img, titulo, texto, btnTexto, btn) {
@@ -436,30 +401,4 @@ function abrirModal(img, titulo, texto, btnTexto, btn) {
 
 function cerrarModal() {
   modalBox.style.transform = "scale(0)";
-}
-
-function cambiarNivel(pagina) {
-  cerrarModal();
-
-  setTimeout(() => {
-    bgJuego.style.transform = "scale(0)";
-    draggableElementsBox.style.transform = "translateX(-100rem)";
-  }, 300);
-
-  setTimeout(() => {
-    window.location.assign(`${pagina}`);
-  }, 600);
-}
-
-function volverInicio() {
-  cerrarModal();
-
-  setTimeout(() => {
-    bgJuego.style.transform = "scale(0)";
-    draggableElementsBox.style.transform = "translateX(-100rem)";
-  }, 300);
-
-  setTimeout(() => {
-    return window.location.href = "./index.html";
-  }, 600);
 }
